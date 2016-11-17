@@ -10,6 +10,9 @@ import java.util.SortedMap;
 import java.util.TreeMap;
 
 import aifree.com.citiestestapp.presentation.screens.cities.activities.CitiesActivity;
+import aifree.com.citiestestapp.presentation.screens.cities.fragments.CountriesFragment;
+import aifree.com.citiestestapp.presentation.screens.cities.fragments.LikedFragment;
+import aifree.com.citiestestapp.presentation.screens.cities.fragments.OptionsFragment;
 
 public class MenuFragmentsFactory {
 
@@ -37,7 +40,7 @@ public class MenuFragmentsFactory {
         return new ArrayList<>(mFragments.values());
     }
 
-    public void generateTabs(TabLayout tabLayout) {
+    private void generateTabs(TabLayout tabLayout) {
         mTabs = new TreeMap<>();
         mTabs.put(Fragments.COUNTRIES.id, tabLayout.newTab().setText("Страны"));
         mTabs.put(Fragments.LIKED.id, tabLayout.newTab().setText("Избранное"));
@@ -46,9 +49,9 @@ public class MenuFragmentsFactory {
 
     private void generateFragments() {
         mFragments = new TreeMap<>();
-        mFragments.put(Fragments.COUNTRIES.id, new Fragment());
-        mFragments.put(Fragments.LIKED.id, new Fragment());
-        mFragments.put(Fragments.OPTIONS.id, new Fragment());
+        mFragments.put(Fragments.COUNTRIES.id, new CountriesFragment());
+        mFragments.put(Fragments.LIKED.id, new LikedFragment());
+        mFragments.put(Fragments.OPTIONS.id, new OptionsFragment());
     }
 
     public enum Fragments {

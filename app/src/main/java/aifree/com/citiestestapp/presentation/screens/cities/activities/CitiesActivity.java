@@ -30,6 +30,7 @@ public class CitiesActivity extends BaseActivity<AcCitiesViewController> {
         bindViews();
         initActionBar();
         mAdapter = new ViewPagerTabsAdapter(getSupportFragmentManager(), mTlTabs, mVpBody);
+        mVpBody.setAdapter(mAdapter);
         mCitiesComponent = DaggerCitiesComponent.builder()
                 .activityBaseComponent(getActivityComponent())
                 .citiesModule(new CitiesModule(this))
