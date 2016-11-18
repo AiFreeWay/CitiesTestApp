@@ -2,6 +2,7 @@ package aifree.com.citiestestapp.presentation.adapters.holders;
 
 import android.content.Context;
 import android.support.annotation.NonNull;
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -11,9 +12,9 @@ import com.thoughtbot.expandablerecyclerview.viewholders.GroupViewHolder;
 
 public abstract class BaseGroupHolder<M, VC> extends GroupViewHolder {
 
-    private VC mViewController;
-    private View mView;
-    private Context mContext;
+    protected VC mViewController;
+    protected View mView;
+    protected Context mContext;
 
     public BaseGroupHolder(@NonNull Context context, VC viewController) {
         super(new View(context));
@@ -21,14 +22,14 @@ public abstract class BaseGroupHolder<M, VC> extends GroupViewHolder {
         mContext = context;
     }
 
-    private BaseGroupHolder(@NonNull View itemView, VC viewController) {
+    public BaseGroupHolder(@NonNull View itemView, VC viewController) {
         super(itemView);
         mViewController = viewController;
         mView = itemView;
         mContext = itemView.getContext();
     }
 
-    private View viewInflater(ViewGroup viewGroup, int resLayout) {
+    protected View viewInflater(ViewGroup viewGroup, int resLayout) {
         LayoutInflater layoutInflater = LayoutInflater.from(mContext);
         return layoutInflater.inflate(resLayout, viewGroup, false);
     }

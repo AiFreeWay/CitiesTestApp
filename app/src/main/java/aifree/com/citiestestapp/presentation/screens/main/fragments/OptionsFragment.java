@@ -1,4 +1,4 @@
-package aifree.com.citiestestapp.presentation.screens.cities.fragments;
+package aifree.com.citiestestapp.presentation.screens.main.fragments;
 
 import android.os.Bundle;
 import android.support.annotation.Nullable;

@@ -2,6 +2,8 @@
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     package="aifree.com.citiestestapp">
 
+    <uses-permission android:name="android.permission.INTERNET" />
+
     <application
         android:name=".applicication.CitiesTestApplication"
         android:allowBackup="true"
@@ -15,7 +17,7 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-        <activity android:name=".presentation.screens.cities.activities.CitiesActivity"/>
+        <activity android:name=".presentation.screens.main.activities.MainActivity"/>
     </application>
 
 </manifest>

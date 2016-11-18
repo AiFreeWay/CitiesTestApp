@@ -11,5 +11,5 @@
         android:fontFamily="sans-serif"
         android:text="Настройки"
         android:textColor="@color/anthracite"
-        android:textSize="17sp" />
+        android:textSize="23sp" />
 </RelativeLayout>

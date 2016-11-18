@@ -9,31 +9,31 @@ import android.view.ViewGroup;
 
 import com.thoughtbot.expandablerecyclerview.viewholders.ChildViewHolder;
 
-public abstract class BaseChildHolder<M, VC>  extends ChildViewHolder {
+public abstract class BaseHolder<M, VC>  extends ChildViewHolder {
 
-    private VC mViewController;
-    private View mView;
-    private Context mContext;
+    protected VC mViewController;
+    protected View mView;
+    protected Context mContext;
 
-    public BaseChildHolder(@NonNull  Context context, VC viewController) {
+    public BaseHolder(@NonNull  Context context, VC viewController) {
         super(new View(context));
         mViewController = viewController;
         mContext = context;
     }
 
-    private BaseChildHolder(@NonNull View itemView, VC viewController) {
+    public BaseHolder(@NonNull View itemView, VC viewController) {
         super(itemView);
         mViewController = viewController;
         mView = itemView;
         mContext = itemView.getContext();
     }
 
-    private View viewInflater(ViewGroup viewGroup, int resLayout) {
+    protected View viewInflater(ViewGroup viewGroup, int resLayout) {
         LayoutInflater layoutInflater = LayoutInflater.from(mContext);
         return layoutInflater.inflate(resLayout, viewGroup, false);
     }
 
-    public abstract BaseChildHolder<M, VC> create(ViewGroup viewGroup);
+    public abstract BaseHolder<M, VC> create(ViewGroup viewGroup);
 
     public abstract void bind(M dataModel);
 }

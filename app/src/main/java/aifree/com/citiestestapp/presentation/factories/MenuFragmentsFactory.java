@@ -9,18 +9,18 @@ import java.util.List;
 import java.util.SortedMap;
 import java.util.TreeMap;
 
-import aifree.com.citiestestapp.presentation.screens.cities.activities.CitiesActivity;
-import aifree.com.citiestestapp.presentation.screens.cities.fragments.CountriesFragment;
-import aifree.com.citiestestapp.presentation.screens.cities.fragments.LikedFragment;
-import aifree.com.citiestestapp.presentation.screens.cities.fragments.OptionsFragment;
+import aifree.com.citiestestapp.presentation.screens.main.activities.MainActivity;
+import aifree.com.citiestestapp.presentation.screens.main.fragments.CountriesFragment;
+import aifree.com.citiestestapp.presentation.screens.main.fragments.LikedFragment;
+import aifree.com.citiestestapp.presentation.screens.main.fragments.OptionsFragment;
 
 public class MenuFragmentsFactory {
 
     private SortedMap<Integer, TabLayout.Tab> mTabs;
     private SortedMap<Integer, Fragment> mFragments;
 
-    public MenuFragmentsFactory(CitiesActivity citiesActivity) {
-        generateTabs(citiesActivity.getTlTabs());
+    public MenuFragmentsFactory(MainActivity mainActivity) {
+        generateTabs(mainActivity.getTlTabs());
         generateFragments();
     }
 

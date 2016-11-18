@@ -1,4 +1,4 @@
-package aifree.com.citiestestapp.presentation.screens.cities.activities;
+package aifree.com.citiestestapp.presentation.screens.main.activities;
 
 import android.graphics.Color;
 import android.os.Bundle;
@@ -11,10 +11,10 @@ import aifree.com.citiestestapp.applicication.di.components.CitiesComponent;
 import aifree.com.citiestestapp.applicication.di.components.DaggerCitiesComponent;
 import aifree.com.citiestestapp.applicication.di.modules.CitiesModule;
 import aifree.com.citiestestapp.presentation.adapters.ViewPagerTabsAdapter;
-import aifree.com.citiestestapp.presentation.screens.cities.view_controllers.AcCitiesViewController;
+import aifree.com.citiestestapp.presentation.screens.main.view_controllers.AcCitiesViewController;
 import aifree.com.citiestestapp.presentation.screens.commons.base_components.BaseActivity;
 
-public class CitiesActivity extends BaseActivity<AcCitiesViewController> {
+public class MainActivity extends BaseActivity<AcCitiesViewController> {
 
     private Toolbar mToolbar;
     private TabLayout mTlTabs;
@@ -26,7 +26,7 @@ public class CitiesActivity extends BaseActivity<AcCitiesViewController> {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.ac_cities);
+        setContentView(R.layout.ac_main);
         bindViews();
         initActionBar();
         mAdapter = new ViewPagerTabsAdapter(getSupportFragmentManager(), mTlTabs, mVpBody);
@@ -39,7 +39,7 @@ public class CitiesActivity extends BaseActivity<AcCitiesViewController> {
         mViewControler.start();
     }
 
-    public CitiesComponent getCitiesComponent() {
+    public CitiesComponent getCytiesComponent() {
         return mCitiesComponent;
     }
 
@@ -52,9 +52,9 @@ public class CitiesActivity extends BaseActivity<AcCitiesViewController> {
     }
 
     private void bindViews() {
-        mToolbar = (Toolbar) findViewById(R.id.ac_cities_toolbar);
-        mTlTabs = (TabLayout) findViewById(R.id.ac_cities_tl_tabs);
-        mVpBody = (ViewPager) findViewById(R.id.ac_cities__vp_body);
+        mToolbar = (Toolbar) findViewById(R.id.ac_main_toolbar);
+        mTlTabs = (TabLayout) findViewById(R.id.ac_main_tl_tabs);
+        mVpBody = (ViewPager) findViewById(R.id.ac_main_vp_body);
     }
 
     private void initActionBar() {

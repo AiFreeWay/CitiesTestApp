@@ -4,7 +4,7 @@ import java.util.concurrent.TimeUnit;
 
 import javax.inject.Inject;
 
-import aifree.com.citiestestapp.presentation.screens.cities.activities.CitiesActivity;
+import aifree.com.citiestestapp.presentation.screens.main.activities.MainActivity;
 import aifree.com.citiestestapp.presentation.screens.commons.base_components.ViewController;
 import aifree.com.citiestestapp.presentation.screens.launcher.activities.LauncherActivity;
 import aifree.com.citiestestapp.presentation.utils.Logger;
@@ -30,6 +30,6 @@ public class AcLauncherViewController extends ViewController<LauncherActivity> {
         Observable.timer(1800, TimeUnit.MILLISECONDS)
                 .observeOn(AndroidSchedulers.mainThread())
                 .doOnSubscribe(mView::startAnimation)
-                .subscribe(time -> mRouter.showActivityClearTask(CitiesActivity.class), Logger::logError);
+                .subscribe(time -> mRouter.showActivityClearTask(MainActivity.class), Logger::logError);
     }
 }
