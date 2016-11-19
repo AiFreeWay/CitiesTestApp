@@ -15,4 +15,5 @@ public interface CityInteractor {
     Observable<Integer> getSelectedCity();
     Observable<List<Country>> getCountries();
     Observable<List<Integer>> getLikedCities();
+    Observable<List<City>> getCities();
 }

@@ -11,10 +11,10 @@ import aifree.com.citiestestapp.applicication.di.components.CitiesComponent;
 import aifree.com.citiestestapp.applicication.di.components.DaggerCitiesComponent;
 import aifree.com.citiestestapp.applicication.di.modules.CitiesModule;
 import aifree.com.citiestestapp.presentation.adapters.ViewPagerTabsAdapter;
-import aifree.com.citiestestapp.presentation.screens.main.view_controllers.AcCitiesViewController;
+import aifree.com.citiestestapp.presentation.screens.main.view_controllers.AcMainViewController;
 import aifree.com.citiestestapp.presentation.screens.commons.base_components.BaseActivity;
 
-public class MainActivity extends BaseActivity<AcCitiesViewController> {
+public class MainActivity extends BaseActivity<AcMainViewController> {
 
     private Toolbar mToolbar;
     private TabLayout mTlTabs;
@@ -35,7 +35,7 @@ public class MainActivity extends BaseActivity<AcCitiesViewController> {
                 .activityBaseComponent(getActivityComponent())
                 .citiesModule(new CitiesModule(this))
                 .build();
-        mViewControler = new AcCitiesViewController(this);
+        mViewControler = new AcMainViewController(this);
         mViewControler.start();
     }
 

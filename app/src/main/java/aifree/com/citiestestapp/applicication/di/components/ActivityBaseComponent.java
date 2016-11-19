@@ -1,5 +1,7 @@
 package aifree.com.citiestestapp.applicication.di.components;
 
+import android.content.Context;
+
 import aifree.com.citiestestapp.applicication.di.modules.ActivityBaseModule;
 import aifree.com.citiestestapp.applicication.di.scopes.PerActivity;
 import aifree.com.citiestestapp.domain.repositories.Repository;
@@ -13,4 +15,5 @@ public interface ActivityBaseComponent {
     void inject(AcLauncherViewController controller);
 
     Repository provideRepository();
+    Context provideContext();
 }

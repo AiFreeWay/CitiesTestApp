@@ -2,7 +2,6 @@ package aifree.com.citiestestapp.presentation.screens.main.fragments;
 
 import android.os.Bundle;
 import android.support.annotation.Nullable;
-import android.support.v4.app.Fragment;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
 import android.view.LayoutInflater;
@@ -14,10 +13,11 @@ import com.rey.material.widget.ProgressView;
 
 import aifree.com.citiestestapp.R;
 import aifree.com.citiestestapp.presentation.adapters.MultiExpannadleRvAdapter;
+import aifree.com.citiestestapp.presentation.screens.commons.base_components.BaseFragment;
 import aifree.com.citiestestapp.presentation.screens.main.view_controllers.FmtCountryViewController;
 
 
-public class CountriesFragment extends Fragment {
+public class CountriesFragment extends BaseFragment {
 
     private RecyclerView mRvCountries;
     private ProgressView mPvProgress;
@@ -38,6 +38,15 @@ public class CountriesFragment extends Fragment {
         LinearLayoutManager layoutManager = new LinearLayoutManager(getContext());
         mRvCountries.setLayoutManager(layoutManager);
         mViewController.start();
+    }
+
+    @Override
+    public void refresh() {
+        try {
+            mViewController.start();
+        } catch (Exception e) {
+
+        }
     }
 
     public void loadData(MultiExpannadleRvAdapter adapter) {

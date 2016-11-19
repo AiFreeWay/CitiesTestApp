@@ -4,7 +4,10 @@ import android.content.Context;
 import android.support.annotation.NonNull;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.ImageView;
 import android.widget.TextView;
+
+import com.squareup.picasso.Picasso;
 
 import aifree.com.citiestestapp.R;
 import aifree.com.citiestestapp.presentation.models.Country;
@@ -31,7 +34,13 @@ public class CountryHolder extends BaseGroupHolder<Country, FmtCountryViewContro
 
     @Override
     public void bind(Country dataModel) {
-        TextView title = (TextView) mView.findViewById(R.id.v_country_holder_title);
+        TextView title = (TextView) mView.findViewById(R.id.v_country_holder_tv_title);
+        ImageView image = (ImageView) mView.findViewById(R.id.v_country_holder_im_image);
         title.setText(dataModel.getTitle());
+        Picasso.with(mContext)
+                .load(dataModel.getImageLink())
+                .placeholder(R.drawable.ic_town)
+                .error(R.drawable.ic_town)
+                .into(image);
     }
 }

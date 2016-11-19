@@ -4,6 +4,8 @@ package aifree.com.citiestestapp.presentation.utils;
 import android.content.Context;
 import android.content.Intent;
 
+import java.io.Serializable;
+
 import javax.inject.Inject;
 
 public class ScreensRouter {
@@ -19,6 +21,13 @@ public class ScreensRouter {
         Intent intent = new Intent(mContext, activityClass);
         intent.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TASK)
                 .addFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
+        mContext.startActivity(intent);
+    }
+
+    public void showActivity(Class activityClass, String dataTag, Serializable data) {
+        Intent intent = new Intent(mContext, activityClass);
+        intent.addFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
+        intent.putExtra(dataTag, data);
         mContext.startActivity(intent);
     }
 }

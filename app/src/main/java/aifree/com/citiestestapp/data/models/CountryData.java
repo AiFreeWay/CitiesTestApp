@@ -5,7 +5,7 @@ import aifree.com.citiestestapp.presentation.models.City;
 
 public class CountryData {
 
-    private int id;
+    private int Id;
     private City[] Cities;
     private String Name;
     private String ImageLink;
@@ -14,18 +14,18 @@ public class CountryData {
     }
 
     public CountryData(int id, City[] cities, String name, String imageLink) {
-        this.id = id;
+        this.Id = id;
         Cities = cities;
         Name = name;
         ImageLink = imageLink;
     }
 
     public int getId() {
-        return id;
+        return Id;
     }
 
     public void setId(int id) {
-        this.id = id;
+        this.Id = id;
     }
 
     public City[] getCities() {

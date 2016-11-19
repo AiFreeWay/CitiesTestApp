@@ -5,6 +5,7 @@ import android.support.annotation.NonNull;
 import android.support.v4.content.ContextCompat;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.ImageView;
 import android.widget.TextView;
 
 
@@ -32,8 +33,11 @@ public class CityHolder extends BaseHolder<City, FmtCountryViewController> {
     @Override
     public void bind(City dataModel) {
         TextView title = (TextView) mView.findViewById(R.id.v_city_holder_title);
+        ImageView liked = (ImageView) mView.findViewById(R.id.v_city_holder_im_liked);
         mViewController.checkOnSelectedCity(this, dataModel);
+        mViewController.checkOnLikedCity(this, dataModel);
         mView.setOnClickListener(v -> mViewController.setSelectedSity(dataModel));
+        liked.setOnClickListener(v -> mViewController.changeLikedState(this, dataModel));
         title.setText(dataModel.getTitle());
     }
 
@@ -43,5 +47,15 @@ public class CityHolder extends BaseHolder<City, FmtCountryViewController> {
 
     public void setSelected() {
         mView.setBackgroundColor(ContextCompat.getColor(mContext, R.color.gray));
+    }
+
+    public void setLiked() {
+        ImageView liked = (ImageView) mView.findViewById(R.id.v_city_holder_im_liked);
+        liked.setBackground(ContextCompat.getDrawable(mContext, R.drawable.ic_liked));
+    }
+
+    public void setUnliked() {
+        ImageView liked = (ImageView) mView.findViewById(R.id.v_city_holder_im_liked);
+        liked.setBackground(ContextCompat.getDrawable(mContext, R.drawable.ic_unliked));
     }
 }

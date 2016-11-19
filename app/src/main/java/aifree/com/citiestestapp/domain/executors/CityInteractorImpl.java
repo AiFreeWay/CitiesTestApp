@@ -52,4 +52,11 @@ public class CityInteractorImpl implements CityInteractor {
     public Observable<List<Integer>> getLikedCities() {
         return mRepository.getLikedCities();
     }
+
+    @Override
+    public Observable<List<City>> getCities() {
+        return getCountries()
+                .flatMap(countries -> Observable.just(CoutryMapper.mapCountriesToCities(countries)))
+                .cache();
+    }
 }

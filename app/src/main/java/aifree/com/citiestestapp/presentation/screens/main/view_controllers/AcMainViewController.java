@@ -7,12 +7,12 @@ import aifree.com.citiestestapp.presentation.screens.main.activities.MainActivit
 import aifree.com.citiestestapp.presentation.screens.commons.base_components.ViewController;
 
 
-public class AcCitiesViewController extends ViewController<MainActivity> {
+public class AcMainViewController extends ViewController<MainActivity> {
 
     @Inject
     MenuFragmentsFactory mMenuFragmentsFactory;
 
-    public AcCitiesViewController(MainActivity view) {
+    public AcMainViewController(MainActivity view) {
         super(view);
         mView.getCytiesComponent()
                 .inject(this);

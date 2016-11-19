@@ -1,32 +1,34 @@
 package aifree.com.citiestestapp.presentation.models;
 
 
-public class City {
+import java.io.Serializable;
 
-    private int id;
-    private String title;
+public class City implements Serializable {
+
+    private int Id;
+    private String Name;
 
     public City() {
     }
 
-    public City(int id, String title) {
-        this.id = id;
-        this.title = title;
+    public City(int id, String name) {
+        this.Id = id;
+        this.Name = name;
     }
 
     public int getId() {
-        return id;
+        return Id;
     }
 
     public void setId(int id) {
-        this.id = id;
+        this.Id = id;
     }
 
     public String getTitle() {
-        return title;
+        return Name;
     }
 
-    public void setTitle(String title) {
-        this.title = title;
+    public void setTitle(String name) {
+        this.Name = name;
     }
 }
